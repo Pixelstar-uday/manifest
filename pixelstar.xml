@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <!-- GitHub -->
+  <remote  name="github"
+           fetch="https://github.com" />
+
+  <!-- GitLab -->
+  <remote  name="gitlab"
+           fetch="https://gitlab.com" />
+
+  <!-- GitHub (PixelStar - Github) -->
+  <remote  name="star"
+           fetch="https://github.com/Pixelstar-uday"
+           revision="refs/heads/14" />
+
+  <!-- GitHub (PixelStar Devices) -->
+  <remote  name="star-devices"
+           fetch="https://github.com/pixelstar-devices"
+           revision="refs/heads/14" />
+
+  <!-- GitLab (PixelStar - Gitlab) -->
+  <remote  name="star-gitlab"
+           fetch="https://gitlab.com/project-pixelstar"
+           revision="refs/heads/14" />
+
+  <!-- Device repos -->
+  <project path="device/custom/sepolicy" name="device_custom_sepolicy" remote="star" />
+  <project path="device/qcom/sepolicy-legacy-um" name="device_qcom_sepolicy-legacy-um" groups="qcom,sdm660" remote="star" /> 
+  <project path="device/qcom/common" name="AOSPA/android_device_qcom_common" revision="uvite" remote="github" />
+  <project path="device/mediatek/sepolicy_vndr" name="device_mediatek_sepolicy_vndr" remote="star" />
+  
+  <!-- External repos -->
+  <project path="external/piex" name="external_piex" remote="star" />
+  <project path="external/wpa_supplicant_8" name="external_wpa_supplicant_8" remote="star" />
+  <project path="external/jemalloc_new" name="platform/external/jemalloc_new" groups="star" />
+
+  <!-- Framework repos -->
+  <project path="frameworks/av" name="frameworks_av" remote="star" />
+  <project path="frameworks/base" name="frameworks_base" remote="star" />
+  <project path="frameworks/native" name="frameworks_native" remote="star" />
+  <project path="frameworks/opt/telephony" name="frameworks_opt_telephony" remote="star" />
+
+  <!-- General repos -->
+  <project path="art" name="art" remote="star" />
+  <project path="bionic" name="bionic" remote="star" />
+  <project path="bootable/recovery" name="bootable_recovery" remote="star" />
+  <project path="build/make" name="build" remote="star" groups="pdk" >
+    <copyfile src="core/root.mk" dest="Makefile" />
+    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    <linkfile src="core" dest="build/core" />
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    <linkfile src="target" dest="build/target" />
+    <linkfile src="tools" dest="build/tools" />
+  </project>
+  <project path="build/soong" name="build_soong" remote="star" groups="pdk,tradefed" >
+    <linkfile src="root.bp" dest="Android.bp" />
+    <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
+  </project>
+  <!--<project path="libcore" name="libcore" remote="star" />-->
+  <project path="manifest" name="manifest" remote="star" />
+
+  <!-- Hardware repos -->
+  <project path="hardware/custom/interfaces" name="hardware_custom_interfaces" remote="star" />
+  <project path="hardware/google/pixel-sepolicy" name="hardware_google_pixel-sepolicy" remote="star" />
+  <project path="hardware/interfaces" name="hardware_interfaces" remote="star" />
+  <project path="hardware/libhardware" name="hardware_libhardware" remote="star" />
+  <project path="hardware/qcom-caf/sdm660/audio" name="hardware_qcom-caf_sdm660_audio" groups="qcom,sdm660" remote="star" />
+  <project path="hardware/qcom-caf/sdm660/display" name="hardware_qcom-caf_sdm660_display" groups="qcom,sdm660" remote="star" />
+  <project path="hardware/qcom-caf/sdm660/media" name="hardware_qcom-caf_sdm660_media" groups="qcom,sdm660" remote="star" />
+  <project path="hardware/qcom-caf/sm8150/audio" name="hardware_qcom-caf_sm8150_audio" groups="qcom,msmnile" remote="star" />
+  <project path="hardware/xiaomi" name="hardware_xiaomi" remote="star" />
+
+  <!-- Packages (Apps) repos -->
+  <project path="packages/apps/Nfc" name="packages_apps_Nfc" remote="star" />
+  <project path="packages/apps/Settings" name="packages_apps_Settings" remote="star" />
+  <project path="packages/apps/TouchGestures" name="packages_apps_TouchGestures" remote="star" />
+  
+  <!-- Packages (Modules) repos -->
+  <project path="packages/modules/Bluetooth" name="packages_modules_Bluetooth" remote="star" />
+  <project path="packages/modules/Bluetooth/android/BtHelper" name="TheParasiteProject/packages_modules_Bluetooth_android_BtHelper" revision="14.0" remote="github" />
+  <project path="packages/modules/Connectivity" name="packages_modules_Connectivity" remote="star-gitlab" />
+  <project path="packages/modules/Permission" name="packages_modules_Permission" remote="star" />
+  <project path="packages/modules/Wifi" name="packages_modules_Wifi" remote="star" />
+  <project path="packages/modules/adb" name="packages_modules_adb" remote="star" />
+  <project path="packages/modules/common" name="packages_modules_common" remote="star" />
+
+  <!-- Packages (Providers) repos -->
+  <project path="packages/providers/DownloadProvider" name="packages_providers_DownloadProvider" remote="star" />
+  <project path="packages/providers/MediaProvider" name="packages_providers_MediaProvider" remote="star" />
+
+  <!-- Packages (Resources) repos -->
+  <project path="packages/resources/devicesettings" name="packages_resources_devicesettings" remote="star" />
+
+  <!-- Packages (Services) repos -->
+  <project path="packages/services/Telecomm" name="packages_services_Telecomm" remote="star" />
+  <project path="packages/services/Telephony" name="packages_services_Telephony" remote="star" />
+
+  <!-- System repos -->
+  <project path="system/core" name="system_core" remote="star" />
+  <project path="system/extras" name="system_extras" remote="star" />
+  <project path="system/libhidl" name="system_libhidl" remote="star" />
+  <project path="system/libhwbinder" name="system_libhwbinder" remote="star" />
+  <project path="system/logging" name="system_logging" remote="star" />
+  <project path="system/media" name="system_media" remote="star" />
+  <project path="system/security" name="system_security" remote="star" />
+  <project path="system/sepolicy" name="system_sepolicy" remote="star" />
+  <project path="system/tools/mkbootimg" name="system_tools_mkbootimg" remote="star" />
+  <project path="system/update_engine" name="system_update_engine" remote="star" />
+  <project path="system/vold" name="system_vold" remote="star" />
+
+  <!-- Vendor repos -->
+  <project path="vendor/aosp" name="vendor_aosp" remote="star" />
+  <project path="vendor/google/interfaces" name="TheParasiteProject/vendor_google_interfaces" revision="14.0" remote="github" />
+  <project path="vendor/gms" name="vendor_gms_new" groups="vendor" remote="star-gitlab" clone-depth="1" />
+  <project path="vendor/custom-preference" name="vendor_custom-preference" remote="star" />
+</manifest> 
